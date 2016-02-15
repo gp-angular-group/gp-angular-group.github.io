@@ -6,16 +6,22 @@
 		.controller('ProfileController', ProfileController);
 	
 	/** @ngInject */
-  function ProfileController(requestService, $log){
+  function ProfileController(profileService, $log){
 		var vm = this;
 
-		vm.user = { name: 'Ivan', age: 15, gender: 'Male' };
 		vm.genders = [ 'Male', 'Female' ];
 
-		vm.saveClick = saveClick;
-		function saveClick() {
+    profileService.getProfile().then(function(response) {
+      vm.user = response.data;
+    });
+
+		vm.saveClick = function() {
 			$log.info("save");
-      requestService.data('POST');
+      profileService.saveProfile(vm.user).then(function(response){
+        if(response.data.success) {
+          vm.message = "Saved!";
+        }
+      });
 		}
 	}
 })();

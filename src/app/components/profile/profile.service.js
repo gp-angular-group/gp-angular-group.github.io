@@ -3,24 +3,34 @@
 
   angular
     .module('gpSocial')
-    .factory('profileService', profileService);
+    .service('profileService', profileService)
+    .service('profileServiceMock', profileServiceMock)
+    .config(function($provide){
+      $provide.decorator('profileService', function($delegate, profileServiceMock) {
+        $delegate = profileServiceMock;
+        return $delegate;
+      });
+    });
 
   /** @ngInject */
   function profileService($http) {
-
-    var service = {
-      getProfile: getProfile,
-      saveProfile: saveProfile
+    this.getProfile = function() {
+      return $http.get('api/profile');
     };
 
-    return service;
-
-    function getProfile() {
-      return $http.get('api/profile');
+    this.saveProfile = function(user) {
+      return $http.post('api/profile', user);
     }
+  }
 
-    function saveProfile() {
-      return $http.post('api/profile');
-    }
+  /** @ngInject */
+  function profileServiceMock($http) {
+    this.getProfile = function() {
+      return $http.get('app/components/profile/mock/getProfile.mock.json');
+    };
+
+    this.saveProfile = function() {
+      return $http.get('app/components/profile/mock/saveProfile.mock.json');
+    };
   }
 })();

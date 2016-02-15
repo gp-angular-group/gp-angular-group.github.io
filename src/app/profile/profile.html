@@ -1,53 +1,45 @@
 <social-navbar></social-navbar>
 
-<h1>Profile page</h1>
-
-<p>{{profile.user}}</p>
-
-
-<div class="wrapper" ng-controller="ProfileController">
+<div class="wrapper">
 	<div class="user-avatar">
-		<!--img src='img/user_avatar.png' /-->
+		<img width="40%" ng-src='{{ profile.user.avatar }}' />
 	</div>
 
-	<form action="" ng-cloak="">
+  <h1 class="greeting"><p>Hi, {{profile.user.name}}!</p></h1>
 
-		<div class="greeting"><p>HI, {{profile.user.name}}</p></div>
-
-		<ang-accordion one-at-a-time="true" icon-position="right" close-icon-url="bower_components/angular-accordion/images/right-icon.png" open-icon-url="bower_components/angular-accordion/images/down-icon.png">
+  <ang-accordion one-at-a-time="true" icon-position="right" close-icon-url="bower_components/angular-accordion/images/right-icon.png" open-icon-url="bower_components/angular-accordion/images/down-icon.png">
 
 
-			<collapsible-item item-title="NAME">
-		        <md-input-container class="input">
-			        <label>NAME:</label>
-			        <input ng-model="profile.user.name">
-		      	</md-input-container>
-		    </collapsible-item>
-		
+    <collapsible-item item-title="NAME">
+          <md-input-container class="input">
+            <label>NAME:</label>
+            <input ng-model="profile.user.name">
+          </md-input-container>
+      </collapsible-item>
 
-		    <collapsible-item item-title="AGE">
-		        <md-input-container>
-			        <label>AGE:</label>
-			        <input  type="number" min="5" max="150" ng-model="profile.user.age">
-		      	</md-input-container>
-		    </collapsible-item>
 
-			<collapsible-item item-title="GENDER">
-				<div class="selecteGender">
+      <collapsible-item item-title="AGE">
+          <md-input-container>
+            <label>AGE:</label>
+            <input  type="number" min="5" max="150" ng-model="profile.user.age">
+          </md-input-container>
+      </collapsible-item>
 
-					<md-input-container class="md-block" flex-gt-sm>
-		            <label>Selected gender: {{profile.user.gender}}</label>
-		            <md-select ng-model="profile.user.gender">
-		              <md-option ng-repeat="gender in profile.genders" value="{{ gender }}">
-		                {{ gender }}
-		              </md-option>
-		            </md-select>
-		          </md-input-container>
-				</div>
-		    </collapsible-item>   
-		</ang-accordion>
+    <collapsible-item item-title="GENDER">
+      <div class="selecteGender">
 
-		<md-button type="" ng-click="profile.saveClick()" class="md-raised md-primary">Save</md-button>
+        <md-input-container class="md-block" flex-gt-sm>
+              <label>Selected gender: {{profile.user.gender}}</label>
+              <md-select ng-model="profile.user.gender">
+                <md-option ng-repeat="gender in profile.genders" value="{{ gender }}">
+                  {{ gender }}
+                </md-option>
+              </md-select>
+            </md-input-container>
+      </div>
+      </collapsible-item>
+  </ang-accordion>
 
-	</form>	
+  <md-button type="" ng-click="profile.saveClick()" class="md-raised md-primary">Save</md-button>
+  <span>{{ profile.message }}</span>
 </div>	
