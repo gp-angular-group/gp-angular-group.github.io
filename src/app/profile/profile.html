@@ -2,7 +2,7 @@
 
 <h1>Profile page</h1>
 
-<p>{{profile.users}}</p>
+<p>{{profile.user}}</p>
 
 
 <div class="wrapper" ng-controller="ProfileController">
@@ -28,21 +28,21 @@
 		    <collapsible-item item-title="AGE">
 		        <md-input-container>
 			        <label>AGE:</label>
-			        <input ng-model="user.age">
+			        <input  type="number" ng-model="user.age">
 		      	</md-input-container>
 		    </collapsible-item>
 
 			<collapsible-item item-title="GENDER">
 				<div class="selecteGender">
 
-					<p>Selected gender: <span class="radioValue">{{ user.gender }}</span> </p>
-
-			        <md-radio-group ng-model="user.gender">
-
-				      <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
-				      <md-radio-button value="Female">Female</md-radio-button>
-				    
-				    </md-radio-group>
+					<md-input-container class="md-block" flex-gt-sm>
+		            <label>Selected gender: {{user.gender}}</label>
+		            <md-select ng-model="user.gender">
+		              <md-option ng-repeat="gender in profile.genders" value="{{gender.gen}}">
+		                {{gender.gen}}
+		              </md-option>
+		            </md-select>
+		          </md-input-container>
 				</div>
 		    </collapsible-item>   
 		</ang-accordion>

@@ -20,8 +20,8 @@
 							url: "/api.com/list"
 						})
 						.success( function(dataSend){
-								vm.users = dataSend;
-								console.log(vm.users)
+								vm.user = dataSend;
+								console.log(vm.user)
 						});
 						vm.users = {name:'Alex', age: 19};
 					}
@@ -30,7 +30,7 @@
 						$http({
 							method: "POST", 
 							url: "/api.com/list",
-							data: vm.users
+							data: vm.user
 						});
 					}
 				}
