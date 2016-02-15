@@ -6,27 +6,27 @@
 		.factory('requestService', requestService)
 
 
-		requestService.$inject = ['$http']; 
-		function requestService($http){
+		requestService.$inject = ['$http', '$log'];
+		function requestService($http, $log){
 			var vm = this;
-			console.log("пришёл")
+      $log.info("пришёл")
 			return {
 				data: function(myMethod){
-					console.log("пришёл");
+					$log.info("пришёл");
 					if (myMethod == 'GET'){
-						console.log('Гет метод');
+            $log.info('Гет метод');
 						$http({
 							method: "GET", 
 							url: "/api.com/list"
 						})
 						.success( function(dataSend){
 								vm.user = dataSend;
-								console.log(vm.user)
+                $log.info(vm.user)
 						});
 						vm.users = {name:'Alex', age: 19};
 					}
 					if (myMethod == 'POST'){
-						console.log('пост метод');
+            $log.info('пост метод');
 						$http({
 							method: "POST", 
 							url: "/api.com/list",

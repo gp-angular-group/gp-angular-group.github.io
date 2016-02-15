@@ -38,8 +38,8 @@
 					<md-input-container class="md-block" flex-gt-sm>
 		            <label>Selected gender: {{profile.user.gender}}</label>
 		            <md-select ng-model="profile.user.gender">
-		              <md-option ng-repeat="gender in profile.genders" value="{{gender.gen}}">
-		                {{gender.gen}}
+		              <md-option ng-repeat="gender in profile.genders" value="{{ gender }}">
+		                {{ gender }}
 		              </md-option>
 		            </md-select>
 		          </md-input-container>

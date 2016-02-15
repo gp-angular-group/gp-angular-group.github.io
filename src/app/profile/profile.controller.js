@@ -6,21 +6,16 @@
 		.controller('ProfileController', ProfileController);
 	
 	/** @ngInject */
-	ProfileController.$inject = ['requestService'];
-	function ProfileController(dataService){ //$timeout, webDevTec, toastr, dataService) {
+  function ProfileController(requestService, $log){
 		var vm = this;
-		//vm.genders
-		//vm.user = 
-		vm.user = {name: 'Ivan', age: 15, gender: 'Male'};
-		vm.genders = ('Male Female').split(' ').map(function(state){
-			return {gen: state};
-		});
 
-		//vm.users = "Ivan";
+		vm.user = { name: 'Ivan', age: 15, gender: 'Male' };
+		vm.genders = [ 'Male', 'Female' ];
+
 		vm.saveClick = saveClick;
-		function saveClick(){
-			console.log("save");
-			dataService.data('POST');	
+		function saveClick() {
+			$log.info("save");
+      requestService.data('POST');
 		}
 	}
 })();
