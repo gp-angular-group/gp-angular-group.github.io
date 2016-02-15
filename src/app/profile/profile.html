@@ -2,6 +2,52 @@
 
 <h1>Profile page</h1>
 
-<p>{{profile.user}}</p>
+<p>{{profile.users}}</p>
 
 
+<div class="wrapper" ng-controller="ProfileController">
+	<div class="user-avatar">
+		<img src='img/user_avatar.png' />
+	</div>
+
+	<form action="" ng-cloak="">
+
+		<div class="greeting"><p>HI, {{user.name}}</p></div>
+
+		<ang-accordion one-at-a-time="true" icon-position="right" close-icon-url="bower_components/angular-accordion/images/right-icon.png" open-icon-url="bower_components/angular-accordion/images/down-icon.png">
+
+
+			<collapsible-item item-title="NAME">
+		        <md-input-container class="input">
+			        <label>NAME:</label>
+			        <input ng-model="user.name">
+		      	</md-input-container>
+		    </collapsible-item>
+		
+
+		    <collapsible-item item-title="AGE">
+		        <md-input-container>
+			        <label>AGE:</label>
+			        <input ng-model="user.age">
+		      	</md-input-container>
+		    </collapsible-item>
+
+			<collapsible-item item-title="GENDER">
+				<div class="selecteGender">
+
+					<p>Selected gender: <span class="radioValue">{{ user.gender }}</span> </p>
+
+			        <md-radio-group ng-model="user.gender">
+
+				      <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+				      <md-radio-button value="Female">Female</md-radio-button>
+				    
+				    </md-radio-group>
+				</div>
+		    </collapsible-item>   
+		</ang-accordion>
+
+		<md-button type="" ng-click="profile.saveClick()" class="md-raised md-primary">Save</md-button>
+
+	</form>	
+</div>	

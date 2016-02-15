@@ -6,10 +6,15 @@
 		.controller('ProfileController', ProfileController);
 
 	/** @ngInject */
-	function ProfileController($timeout, webDevTec, toastr) {
+	ProfileController.$inject = ['requestService'];
+	function ProfileController(dataService){ //$timeout, webDevTec, toastr, dataService) {
 		var vm = this;
 
-		vm.user = "Ivan";
-
+		//vm.users = "Ivan";
+		vm.saveClick = saveClick;
+		function saveClick(){
+			console.log("save");
+			dataService.data('POST');	
+		}
 	}
 })();

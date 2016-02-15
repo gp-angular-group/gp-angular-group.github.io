@@ -5,7 +5,13 @@
 		.module('gpSocial')
 		.controller('LoginController', LoginController);
 
-		function LoginController() {
+		LoginController.$inject = ['requestService'];
+		function LoginController(dataService) {
 			var vm = this;
+			vm.loginClick = loginClick;
+			function loginClick(){
+				console.log("get");
+				dataService.data('GET');
+			}
 		}
 })();
