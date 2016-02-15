@@ -11,7 +11,7 @@
 		var vm = this;
 		//vm.genders
 		//vm.user = 
-		
+		vm.user = {name: 'Ivan', age: 15, gender: 'Male'};
 		vm.genders = ('Male Female').split(' ').map(function(state){
 			return {gen: state};
 		});
