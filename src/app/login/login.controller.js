@@ -6,13 +6,14 @@
 		.controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController(requestService, $log){
+    function LoginController(authorisationService, $log, $state){
 			var vm = this;
 
-			vm.loginClick = loginClick;
-			function loginClick(){
+			vm.loginClick = function() {
 				$log.info("get");
-        requestService.data('GET');
+        authorisationService.login().then(function(){
+           $state.go('profile');
+        });
 			}
 		}
 })();
