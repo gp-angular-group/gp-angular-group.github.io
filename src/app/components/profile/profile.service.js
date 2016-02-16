@@ -19,7 +19,18 @@
     };
 
     this.saveProfile = function(user) {
-      return $http.post('https://fathomless-everglades-3680.herokuapp.com/api/user/1', user);
+      var userSend = {
+        avatar: user.avatar,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        age: user.age
+      }
+      if (user.gender == 'Female'){
+        userSend.gender =  'F';
+      } else{
+        userSend.gender =  'M';
+      }
+      return $http.post('https://fathomless-everglades-3680.herokuapp.com/api/user/1', userSend);
     }
   }
 
