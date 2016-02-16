@@ -1,0 +1,16 @@
+body{
+    background: url("http://img.mota.ru/upload/wallpapers/2012/07/31/14/02/31902/mota_ru_20726113-preview.jpg") no-repeat center center fixed;
+    -moz-background-size: 100% 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100% 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100% 100%; /* Opera 9.6+ */
+    background-size: 100% 100%; /* Современные браузеры */
+}
+
+
+
+.login-button{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+}
