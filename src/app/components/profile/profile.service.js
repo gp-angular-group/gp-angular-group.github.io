@@ -15,11 +15,11 @@
   /** @ngInject */
   function profileService($http) {
     this.getProfile = function() {
-      return $http.get('http://fathomless-everglades-3680.herokuapp.com/api/user/1');
+      return $http.get('https://fathomless-everglades-3680.herokuapp.com/api/user/1');
     };
 
     this.saveProfile = function(user) {
-      return $http.post('http://fathomless-everglades-3680.herokuapp.com/api/user/1', user);
+      return $http.post('https://fathomless-everglades-3680.herokuapp.com/api/user/1', user);
     }
   }
 

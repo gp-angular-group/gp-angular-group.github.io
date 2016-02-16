@@ -5,18 +5,24 @@
 		<img width="40%" ng-src='{{ profile.user.avatar }}' />
 	</div>
 
-  <h1 class="greeting"><p>Hi, {{profile.user.name}}!</p></h1>
+  <h1 class="greeting"><p>Hi, {{ profile.user.firstName + " " + profile.user.lastName }}!</p></h1>
 
   <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
 
 
-    <collapsible-item item-title="NAME: {{profile.user.name}}">
+    <collapsible-item item-title="FIRST NAME: {{profile.user.firstName}}">
           <md-input-container class="input">
             <!--label>NAME:</label-->
-            <input ng-model="profile.user.name">
+            <input ng-model="profile.user.firstName">
           </md-input-container>
       </collapsible-item>
 
+    <collapsible-item item-title="LAST NAME: {{profile.user.lastName}}">
+          <md-input-container class="input">
+            <!--label>NAME:</label-->
+            <input ng-model="profile.user.lastName">
+          </md-input-container>
+      </collapsible-item>
 
       <collapsible-item  item-title="AGE: {{profile.user.age}}">
           <md-input-container>
