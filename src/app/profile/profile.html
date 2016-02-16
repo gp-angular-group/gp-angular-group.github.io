@@ -7,7 +7,7 @@
 
   <h1 class="greeting"><p>Hi, {{profile.user.name}}!</p></h1>
 
-  <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="bower_components/angular-accordion/images/right-icon.png" open-icon-url="bower_components/angular-accordion/images/down-icon.png">
+  <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
 
 
     <collapsible-item item-title="NAME: {{profile.user.name}}">
@@ -18,10 +18,10 @@
       </collapsible-item>
 
 
-      <collapsible-item item-title="AGE: {{profile.user.age}}">
+      <collapsible-item  item-title="AGE: {{profile.user.age}}">
           <md-input-container>
             <!--label>AGE:</label-->
-            <input  type="number" min="5" max="150" ng-model="profile.user.age">
+            <input  type="number" min="5" max="150"  ng-model="profile.user.age">
           </md-input-container>
       </collapsible-item>
 

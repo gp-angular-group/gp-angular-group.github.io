@@ -1,5 +1,5 @@
 body{
-    background: url("http://img.mota.ru/upload/wallpapers/2012/07/31/14/02/31902/mota_ru_20726113-preview.jpg") no-repeat center center fixed;
+    background-color: #C5CAE9; /*: url("https://s-media-cache-ak0.pinimg.com/564x/60/b0/a7/60b0a7ef623bc2487385bace5d68fc8c.jpg") no-repeat center center fixed;  */
     -moz-background-size: 100% 100%; /* Firefox 3.6+ */
     -webkit-background-size: 100% 100%; /* Safari 3.1+ и Chrome 4.0+ */
     -o-background-size: 100% 100%; /* Opera 9.6+ */
@@ -11,6 +11,6 @@ body{
 .login-button{
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 40%;
     margin-left: -40px;
 }
