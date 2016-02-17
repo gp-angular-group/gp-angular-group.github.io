@@ -20,10 +20,9 @@
 
     vm.save = function() {
       $log.info("save");
-      profileService.saveProfile(vm.user).then(function(response){
-        if(response.data.success) {
-          vm.message = "Saved!";
-        }
+      vm.message = true; //временно
+      profileService.saveProfile(vm.user).then(function(){
+        /*vm.message = true;*/
       });
     }
   }
