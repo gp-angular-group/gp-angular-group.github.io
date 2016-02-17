@@ -1,19 +1,19 @@
 (function() {
-	'use strict';
+  'use strict';
 
-	angular
-		.module('gpSocial')
-		.controller('LoginController', LoginController);
+  angular
+    .module('gpSocial')
+    .controller('LoginController', LoginController);
 
     /** @ngInject */
     function LoginController(authorisationService, $log, $state){
-			var vm = this;
+      var vm = this;
 
-			vm.loginClick = function() {
-				$log.info("get");
+      vm.loginClick = function() {
+        $log.info("get");
         authorisationService.login().then(function(){
            $state.go('profile');
         });
-			}
-		}
+      }
+    }
 })();
