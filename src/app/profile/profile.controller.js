@@ -27,7 +27,7 @@
    
     });
 
-    vm.saveClick = function() {
+    vm.save = function() {
       $log.info("save");
       profileService.saveProfile(vm.user).then(function(response){
         if(response.data.success) {

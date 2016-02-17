@@ -1,38 +1,39 @@
  .wrapper {
   width: 100%;   
-    margin: 0 auto;
-    text-align: center;
-}
-
-
-.greeting {
-  color: black;
-  font-size: 125%;
+  margin: 0 auto;
   text-align: center;
 
-}
-.collapsible-item {
-    margin-bottom: 0;
-}
-.collapsible-item .title {
-  text-align: center;
-}
+ .greeting {
+   color: black;
+   font-size: 125%;
+   text-align: center;
+ }
 
+ .collapsible-item {
+   margin-bottom: 0;
 
+   .title {
+     text-align: center;
+   }
 
-.user-avatar {
-  margin: 20px auto;
-}
+ }
 
-.user-avatar img {
-  max-height: 20%;  
-  border-radius: 99%;
-  display: block;
-    margin: auto auto;
+ .user-avatar {
+   margin: 20px auto;
+
+   img {
+     max-height: 20%;
+     border-radius: 99%;
+     display: block;
+     margin: auto auto;
+   }
+
+ }
+
 }
 
 .md-button {
   display:block;
-    width: auto;
-    margin: 10px auto;
+  width: auto;
+  margin: 10px auto;
 }

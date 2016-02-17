@@ -1,16 +1,18 @@
+html,
 body {
-  background-color: #C5CAE9; /*: url("https://s-media-cache-ak0.pinimg.com/564x/60/b0/a7/60b0a7ef623bc2487385bace5d68fc8c.jpg") no-repeat center center fixed;  */
-  -moz-background-size: 100% 100%; /* Firefox 3.6+ */
-  -webkit-background-size: 100% 100%; /* Safari 3.1+ и Chrome 4.0+ */
-  -o-background-size: 100% 100%; /* Opera 9.6+ */
-  background-size: 100% 100%; /* Современные браузеры */
+  background: #C5CAE9;
+  height: 100%;
+  min-height: 100%;
 }
 
+.md-button {
 
+  &.login-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    margin: 0 0 0 -25px;
+  }
 
-.login-button {
-  position: fixed;
-  top: 50%;
-  left: 40%;
-  margin-left: -40px;
 }

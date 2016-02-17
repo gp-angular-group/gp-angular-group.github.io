@@ -9,7 +9,7 @@
     function LoginController(authorisationService, $log, $state){
       var vm = this;
 
-      vm.loginClick = function() {
+      vm.enter = function() {
         $log.info("get");
         authorisationService.login().then(function(){
            $state.go('profile');
