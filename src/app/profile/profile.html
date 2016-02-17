@@ -31,13 +31,12 @@
           </md-input-container>
       </collapsible-item>
 
-    <collapsible-item item-title="GENDER: {{profile.user.gender}}">
+    <collapsible-item item-title="GENDER: {{ profile.genders[profile.user.gender] }}">
       <div class="selecteGender">
 
         <md-input-container class="md-block"  flex-gt-sm>
-              <!--label>Selected gender: {{profile.user.gender}}</label-->
               <md-select ng-model="profile.user.gender">
-                <md-option  ng-repeat="gender in profile.genders" value="{{ gender }}">
+                <md-option ng-repeat="(genderKey, gender)  in profile.genders" value="{{ genderKey }}">
                   {{ gender }}
                 </md-option>
               </md-select>

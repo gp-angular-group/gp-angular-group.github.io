@@ -9,23 +9,13 @@
   function ProfileController(profileService, $log){
     var vm = this;
 
-    vm.genders = [ 'Male', 'Female' ];
+    vm.genders = {
+      M: 'Male',
+      F: 'Female'
+    };
 
-    profileService.getProfile().then(function(response) {
-      vm.user = {
-        firstName: response.data.firstName,
-        lastName: response.data.lastName,
-        age: response.data.age,
-        //gender: response.data.gender,
-        avatar: response.data.avatar
-      }
-
-      if (response.data.gender == "M"){
-        vm.user.gender = 'Male';
-      }else{
-        vm.user.gender = 'Female';
-      }
-
+    profileService.getProfile().then(function(user) {
+      vm.user = user;
     });
 
     vm.save = function() {
