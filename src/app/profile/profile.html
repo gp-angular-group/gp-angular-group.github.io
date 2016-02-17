@@ -1,9 +1,9 @@
 <social-navbar></social-navbar>
 
 <div class="wrapper" >
-	<div class="user-avatar">
-		<img width="40%" ng-src='{{ profile.user.avatar }}' />
-	</div>
+  <div class="user-avatar">
+    <img width="40%" ng-src='{{ profile.user.avatar }}' />
+  </div>
 
   <h1 class="greeting"><p>Hi, {{ profile.user.firstName + " " + profile.user.lastName }}!</p></h1>
 
@@ -46,7 +46,7 @@
       </collapsible-item>
   </ang-accordion>
 
-  <md-button ng-click="profile.saveClick()" class="md-raised md-primary">Save</md-button>
+  <md-button ng-click="profile.save()" class="md-raised md-primary">Save</md-button>
   <span>{{ profile.message }}</span>
 
-</div>	
+</div>  
