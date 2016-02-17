@@ -4,7 +4,7 @@
   angular
     .module('gpSocial')
     .controller('ProfileController', ProfileController);
-  
+
   /** @ngInject */
   function ProfileController(profileService, $log){
     var vm = this;
@@ -19,12 +19,13 @@
         //gender: response.data.gender,
         avatar: response.data.avatar
       }
+
       if (response.data.gender == "M"){
         vm.user.gender = 'Male';
       }else{
         vm.user.gender = 'Female';
       }
-   
+
     });
 
     vm.save = function() {
