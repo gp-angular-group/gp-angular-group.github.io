@@ -13,9 +13,11 @@
       </md-toolbar>
       <md-content layout-padding >
         <md-list-item ng-repeat="section in menuSections">        
-	        <div class="md-list-item-text" layout="column">
+	        <!-- <div class="md-list-item-text" layout="column">
 	          <a href="#">{{section.name}}</a>
-	        </div>
+	        </div> -->	        
+    		<li><a ui-sref="{{section.state.name}}">{{section.name}}</a></li>
+			
       	</md-list-item>      	
       </md-content>
     </md-sidenav>    

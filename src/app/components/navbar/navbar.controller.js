@@ -7,13 +7,16 @@
       $scope.toggleLeft = buildToggler('left');
        $scope.menuSections = [
         {
-          name: 'Home'       
+          name: 'My profile',
+          state: {
+            name: 'profile'
+          }  
         },
         {
-          name: 'Friends'
-        },
-        {
-          name: 'Sign Out'
+          name: 'Log Out',
+          state: {
+            name: 'login'
+          }       
         }];       
      
       function buildToggler(navID) {
@@ -26,5 +29,5 @@
         }
       }
     })
-        
+
 })();
