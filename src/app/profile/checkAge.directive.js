@@ -7,12 +7,10 @@ angular
   .directive('checkAgeDirective', checkAgeDirective);
   
   function checkAgeDirective(){
-    var vm = this;
-
     return {
       require: 'ngModel',
       link: function (scope, element, attributes, ctrl) {
-          ctrl.$validators.checkAgeDirective = function (modelValue, viewValue) {
+          ctrl.$validators.checkAgeDirective = function (modelValue) {
               scope.ageError = true;
               if (ctrl.$isEmpty(modelValue)) // if empty, correct value
               {   
@@ -31,7 +29,7 @@ angular
           };
       }
     };
-  };
+  }
 
 
 

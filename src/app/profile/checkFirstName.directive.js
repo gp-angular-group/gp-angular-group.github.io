@@ -7,12 +7,11 @@
 
   /** @ngInject */
   function checkFirstNameDirective(){
-    var vm = this;
-
+    
     return {
       require: 'ngModel',
       link: function (scope, element, attributes, ctrl) {
-          ctrl.$validators.checkFirstNameDirective = function (modelValue, viewValue) {
+          ctrl.$validators.checkFirstNameDirective = function (modelValue) {
               scope.firstNameError = true;
               if (ctrl.$isEmpty(modelValue)) // if empty, correct value
               {   
@@ -31,6 +30,6 @@
           };
       }
     };
-  };
+  }
 
 })();

@@ -7,12 +7,11 @@ angular
   .directive('checkLastNameDirective', checkLastNameDirective);
 
   function checkLastNameDirective(){
-    var vm = this;
-
+    
     return {
       require: 'ngModel',
       link: function (scope, element, attributes, ctrl) {
-          ctrl.$validators.checkLastNameDirective = function (modelValue, viewValue) {
+          ctrl.$validators.checkLastNameDirective = function (modelValue) {
               scope.lastNameError = true;
               if (ctrl.$isEmpty(modelValue)) // if empty, correct value
               {   
@@ -31,7 +30,7 @@ angular
           };
       }
     };
-  };
+  }
 
 
 
