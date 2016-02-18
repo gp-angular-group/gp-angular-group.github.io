@@ -17,6 +17,7 @@
     profileService.getProfile().then(function(user) {
       vm.user = user;
     });
+
     vm.submitForm = function() {
       // check to make sure the form is completely valid
       if (vm.userForm.$valid) {
