@@ -1,15 +1,25 @@
 .acme-navbar-text {
   color: white;
 }
-li{
-	list-style: none;
-}
-a{
-	text-decoration: none;
-	color: black;
+
+li {
+  list-style: none;
 }
 
-a:hover{
-	color: blue;
+a {
+  text-decoration: none;
+  color: black;
 }
 
+a:hover {
+  color: blue;
+}
+
+.menu-icon-button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNHB4IgoJIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnIGlkPSJIZWFkZXIiPgoJPGc+CgkJPHJlY3QgeD0iLTYxOCIgeT0iLTIyMzIiIGZpbGw9Im5vbmUiIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjM2MDAiLz4KCTwvZz4KPC9nPgo8ZyBpZD0iTGFiZWwiPgo8L2c+CjxnIGlkPSJJY29uIj4KCTxnPgoJCTxyZWN0IGZpbGw9Im5vbmUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIvPgoJCTxwYXRoIGQ9Ik0zLDE4aDE4di0ySDNWMTh6IE0zLDEzaDE4di0ySDNWMTN6IE0zLDZ2MmgxOFY2SDN6Ii8+Cgk8L2c+CjwvZz4KPGcgaWQ9IkdyaWQiIGRpc3BsYXk9Im5vbmUiPgoJPGcgZGlzcGxheT0iaW5saW5lIj4KCTwvZz4KPC9nPgo8L3N2Zz4K");
+  margin: auto;
+}

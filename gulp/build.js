@@ -78,6 +78,17 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
+// svg to base64 for navbar burger-icon
+var cssBase64 = require('gulp-css-base64');
+
+//Without options
+gulp.task('img2inline', function () {
+  return gulp.src('img2inline/navbar.scss')
+    .pipe(cssBase64())
+    .pipe(gulp.dest('src/app/components/navbar'));
+});
+
+// Other
 gulp.task('other', function () {
   var fileFilter = $.filter(function (file) {
     return file.stat.isFile();
@@ -95,4 +106,4 @@ gulp.task('clean', function () {
   return $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')]);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'fonts', 'img2inline', 'other']);

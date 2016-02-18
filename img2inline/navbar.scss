@@ -1,0 +1,25 @@
+.acme-navbar-text {
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+.menu-icon-button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  background-image: url("../src/assets/images/ic_menu_24px.svg");
+  margin: auto;
+}
