@@ -18,6 +18,13 @@
       vm.user = user;
     });
 
+    vm.submitForm = function() {
+      // check to make sure the form is completely valid
+      if (vm.userForm.$valid) {
+        alert('our form is amazing');
+      }
+
+    };
     vm.save = function() {
       $log.info("save");
       vm.message = true; //временно

@@ -6,46 +6,59 @@
   </div>
 
   <h1 class="greeting"><p>Hi, {{ profile.user.firstName + " " + profile.user.lastName }}!</p></h1>
+  <form name="userForm">
+    <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
 
-  <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
 
-
-    <collapsible-item item-title="FIRST NAME: {{profile.user.firstName}}">
-          <md-input-container class="input">
-            <!--label>NAME:</label-->
-            <input ng-model="profile.user.firstName">
-          </md-input-container>
-      </collapsible-item>
-
-    <collapsible-item item-title="LAST NAME: {{profile.user.lastName}}">
-          <md-input-container class="input">
-            <!--label>NAME:</label-->
-            <input ng-model="profile.user.lastName">
-          </md-input-container>
-      </collapsible-item>
-
-      <collapsible-item  item-title="AGE: {{profile.user.age}}">
-          <md-input-container>
-            <!--label>AGE:</label-->
-            <input  type="number" min="5" max="150"  ng-model="profile.user.age">
-          </md-input-container>
-      </collapsible-item>
-
-    <collapsible-item item-title="GENDER: {{ profile.genders[profile.user.gender] }}">
-      <div class="selecteGender">
-
-        <md-input-container class="md-block"  flex-gt-sm>
-              <md-select ng-model="profile.user.gender">
-                <md-option ng-repeat="(genderKey, gender)  in profile.genders" value="{{ genderKey }}">
-                  {{ gender }}
-                </md-option>
-              </md-select>
+      <collapsible-item item-title="FIRST NAME: {{profile.user.firstName}}">
+            <md-input-container class="input">
+              <!--label>NAME:</label-->
+              <input class="form-control" name="firstName" ng-model="profile.user.firstName"  check-first-name-directive
+              ng-minlength="3" 
+              ng-maxlength="12" 
+              required>
+              <p ng-show="userForm.firstName.$error.checkFirstNameDirective"  class="help-block">{{firstNameErrorText}}</p>
             </md-input-container>
-      </div>
-      </collapsible-item>
-  </ang-accordion>
+        </collapsible-item>
 
-  <md-button ng-click="profile.save()" class="md-raised md-primary">Save</md-button>
+      <collapsible-item item-title="LAST NAME: {{profile.user.lastName}}">
+            <md-input-container class="input">
+              <!--label>NAME:</label-->
+              <input class="form-control" name="lastName" ng-model="profile.user.lastName" check-last-name-directive 
+              ng-minlength="3" 
+              ng-maxlength="12"
+              required>
+              <p ng-show="userForm.lastName.$error.checkLastNameDirective"  class="help-block">{{LastNameErrorText}}</p>
+            </md-input-container>
+        </collapsible-item>
+
+        <collapsible-item  item-title="AGE: {{profile.user.age}}">
+            <md-input-container>
+              <!--label>AGE:</label-->
+              <input class="form-control" type="number" name="userAge" ng-model="profile.user.age" check-age-directive
+              ng-min="5" 
+              ng-max="150"  
+              required  >
+              <p ng-show="userForm.userAge.$error.checkAgeDirective"  class="help-block">{{ageErrorText}}</p>
+            </md-input-container>
+        </collapsible-item>
+
+      <collapsible-item item-title="GENDER: {{ profile.genders[profile.user.gender] }}">
+        <div class="selecteGender">
+
+          <md-input-container class="md-block"  flex-gt-sm>
+                <md-select ng-model="profile.user.gender">
+                  <md-option ng-repeat="(genderKey, gender)  in profile.genders" value="{{ genderKey }}">
+                    {{ gender }}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+        </div>
+        </collapsible-item>
+    </ang-accordion>
+  </form>
+
+  <md-button type="submit" name="submitButton" ng-click="profile.save()" class="md-raised md-primary" ng-disabled="userForm.firstName.$error.checkFirstNameDirective || userForm.lastName.$error.checkLastNameDirective|| userForm.userAge.$error.checkAgeDirective">Save</md-button>
   <span ng-show="profile.message">Saved!</span>
 
 </div>  
