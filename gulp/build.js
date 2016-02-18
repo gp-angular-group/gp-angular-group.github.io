@@ -84,7 +84,9 @@ var cssBase64 = require('gulp-css-base64');
 //Without options
 gulp.task('img2inline', function () {
   return gulp.src('img2inline/navbar.scss')
-    .pipe(cssBase64())
+    .pipe(cssBase64(/*{
+      maxWeightResource: 100 //Default value: 32768 Bytes
+     }*/))
     .pipe(gulp.dest('src/app/components/navbar'));
 });
 
