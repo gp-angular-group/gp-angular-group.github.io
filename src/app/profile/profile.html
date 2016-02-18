@@ -13,7 +13,16 @@
       <collapsible-item item-title="FIRST NAME: {{profile.user.firstName}}">
             <md-input-container class="input">
               <!--label>NAME:</label-->
-              <input class="form-control" name="firstName" ng-model="profile.user.firstName" ng-minlength="3" ng-maxlength="12">
+              <input class="form-control" name="firstName" ng-model="profile.user.firstName"
+              ng-minlength="3" 
+              ng-maxlength="12" 
+              required>
+              <!-- <div class="help-block" ng-show="userForm.firstName.$error" ng-if="userForm.firstName.$touched">
+                <p ng-show="minlength">User First Name is too short</p>
+                <p ng-show="maxlength">User First Name is too long</p>
+                <p ng-show="required">User First Name  is reauired</p>
+              </div> -->
+              <p ng-show="userForm.firstName.$error.required" class="help-block">User First Name  is reauired</p>
               <p ng-show="userForm.firstName.$error.minlength" class="help-block">User First Name is too short.</p>
               <p ng-show="userForm.firstName.$error.maxlength" class="help-block">User First Name is too long.</p>
             </md-input-container>
@@ -22,7 +31,11 @@
       <collapsible-item item-title="LAST NAME: {{profile.user.lastName}}">
             <md-input-container class="input">
               <!--label>NAME:</label-->
-              <input class="form-control" name="lastName" ng-model="profile.user.lastName"  ng-minlength="3" ng-maxlength="12">
+              <input class="form-control" name="lastName" ng-model="profile.user.lastName"  
+              ng-minlength="3" 
+              ng-maxlength="12"
+              required>
+              <p ng-show="userForm.lastName.$error.required" class="help-block">User Last Name  is reauired</p>
               <p ng-show="userForm.lastName.$error.minlength" class="help-block">User Last Name is too short.</p>
               <p ng-show="userForm.lastName.$error.maxlength" class="help-block">User Last Nam is too long.</p>
             </md-input-container>
@@ -31,9 +44,13 @@
         <collapsible-item  item-title="AGE: {{profile.user.age}}">
             <md-input-container>
               <!--label>AGE:</label-->
-              <input class="form-control" type="number" name="userAge" ng-min="5" ng-max="150"  ng-model="profile.user.age">
-              <p ng-show="userForm.userAge.$error.min" class="help-block">Age should more than 5 years old.</p>
-              <p ng-show="userForm.userAge.$error.max" class="help-block">Age should more than 150 years old.</p>
+              <input class="form-control" type="number" name="userAge" ng-model="profile.user.age" 
+              ng-min="5" 
+              ng-max="150"  
+              required  >
+              <p ng-show="userForm.userAge.$error.required" class="help-block">Age  is reauired</p>
+              <p ng-show="userForm.userAge.$error.min" class="help-block">Age should more than 5 years old</p>
+              <p ng-show="userForm.userAge.$error.max" class="help-block">Age should more than 150 years old</p>
             </md-input-container>
         </collapsible-item>
 
