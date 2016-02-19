@@ -1,0 +1,22 @@
+<social-navbar></social-navbar>
+
+
+<div flex-xs flex-gt-xs="50" layout="column">
+	<md-button class="md-raised md-primary sort-button" ng-click="history.sort()">Sort</md-button>
+		<md-list layout-padding>
+		<md-card>
+			<md-list-item class="md-2-line">
+				<img ng-src="{{history.myhistory.image}}" class="md-avatar">
+				<div class="md-list-item-text">
+				  <h4>{{ history.myhistory.title }}</h4>
+				  <p>{{ history.myhistory.description }}</p>
+
+				</div>
+			    <md-button class="md-raised" ng-disabled="false" ng-click="">{{ history.myhistory.price }} $</md-button>
+		  	</md-list-item>
+		</md-card>
+
+	</md-list>
+
+</div>
+

@@ -15,6 +15,20 @@
         controllerAs: 'login'
       })
 
+      .state('history', {
+        url: '/history',
+        templateUrl: 'app/history/history.html',
+        controller: 'HistoryController',
+        controllerAs: 'history'
+      })
+
+      .state('messages', {
+        url: '/messages',
+        templateUrl: 'app/messages/messages.html',
+        controller: 'MessagesController',
+        controllerAs: 'messages'
+      })
+
       .state('profile', {
         url: '/profile',
         templateUrl: 'app/profile/profile.html',

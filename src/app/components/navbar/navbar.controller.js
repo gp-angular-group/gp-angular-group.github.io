@@ -13,6 +13,18 @@
           }  
         },
         {
+          name: 'My messages',
+          state: {
+            name: 'messages'
+          }  
+        },
+        {
+          name: 'My history',
+          state: {
+            name: 'history'
+          }  
+        },
+        {
           name: 'Log Out',
           state: {
             name: 'login'
