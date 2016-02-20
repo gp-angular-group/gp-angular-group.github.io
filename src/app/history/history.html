@@ -3,16 +3,18 @@
 
 <div flex-xs flex-gt-xs="50" layout="column">
 	<md-button class="md-raised md-primary sort-button" ng-click="history.sort()">Sort</md-button>
-		<md-list layout-padding>
-		<md-card>
-			<md-list-item class="md-2-line">
-				<img ng-src="{{history.myhistory.image}}" class="md-avatar">
-				<div class="md-list-item-text">
-				  <h4>{{ history.myhistory.title }}</h4>
-				  <p>{{ history.myhistory.description }}</p>
+		<md-list layout-padding >
+		<md-card ng-repeat="history in history.myhistory" >
+			<md-list-item class="md-2-line" >
+				<img  ng-src="{{history.image}}" class="md-avatar">
+				<div  class="md-list-item-text md-2-line">
+				  <h4>{{ history.title }}</h4>
+				  <p>{{ history.description }}</p>
 
 				</div>
-			    <md-button class="md-raised" ng-disabled="false" ng-click="">{{ history.myhistory.price }} $</md-button>
+				<div>
+			    <p layout="row" layout-align="center center"   class="price-text">{{ history.price }} $</p>
+			  </div>
 		  	</md-list-item>
 		</md-card>
 
