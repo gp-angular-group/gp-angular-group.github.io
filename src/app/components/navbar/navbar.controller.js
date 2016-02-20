@@ -3,7 +3,7 @@
 
   angular
     .module('gpSocial')
-    .controller('NavbarController', function ($scope, $timeout, $mdSidenav, $log) {
+    .controller('NavbarController', function ($scope, profileService, $timeout, $mdSidenav, $log) {
       $scope.toggleLeft = buildToggler('left');
        $scope.menuSections = [
         {
@@ -30,6 +30,10 @@
             name: 'login'
           }       
         }];       
+
+        profileService.getProfile().then(function(user) {
+          $scope.user = user;
+        });
      
       function buildToggler(navID) {
         return function() {

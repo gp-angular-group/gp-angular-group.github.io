@@ -26,7 +26,7 @@
   /** @ngInject */
   function authorisationServiceMock($http) {
     this.login = function() {
-      return $http.get('app/components/authorisation/mock/login.mock.json');
+        return $http.get('app/components/authorisation/mock/login.mock.json');  
     };
 
     this.logout = function() {

@@ -4,12 +4,16 @@
 	    <md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
 	        <md-icon class="menu-icon-button" md-svg-icon="assets/images/ic_menu_24px.svg"></md-icon>
 	    </md-button>
+      <p>Text</p>
 	  </div>
 	</md-toolbar>
  
     <md-sidenav class="md-sidenav-left" md-component-id="left" >
       <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">MENU</h1>
+        <div class="user-avatar" >
+          <img width="40%" ng-src='{{ user.avatar }}' />
+        </div>
+        <h1 class="md-toolbar-tools">{{ user.firstName + " " + user.lastName }}</h1>
       </md-toolbar>
       <md-content layout-padding >
         <md-list-item ng-repeat="section in menuSections">
