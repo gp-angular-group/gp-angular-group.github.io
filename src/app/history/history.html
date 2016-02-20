@@ -2,9 +2,9 @@
 
 
 <div flex-xs flex-gt-xs="50" layout="column">
-	<md-button class="md-raised md-primary sort-button" ng-click="history.sort()">Sort</md-button>
+	<md-button class="md-raised md-primary sort-button" ng-click=" orderByField='price';sortType = !sortType">Sort</md-button>
 		<md-list layout-padding >
-		<md-card ng-repeat="history in history.myhistory" >
+		<md-card ng-repeat="history in history.myhistory | orderBy:orderByField:sortType" >
 			<md-list-item class="md-2-line" >
 				<img  ng-src="{{history.image}}" class="md-avatar">
 				<div  class="md-list-item-text md-2-line">
