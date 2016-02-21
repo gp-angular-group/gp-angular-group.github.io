@@ -3,37 +3,15 @@
 
   angular
     .module('gpSocial')
-    .controller('NavbarController', function ($scope, profileService, $timeout, $mdSidenav, $log) {
-      $scope.toggleLeft = buildToggler('left');
-       $scope.menuSections = [
-        {
-          name: 'My profile',
-          state: {
-            name: 'profile'
-          }  
-        },
-        {
-          name: 'My messages',
-          state: {
-            name: 'messages'
-          }  
-        },
-        {
-          name: 'My history',
-          state: {
-            name: 'history'
-          }  
-        },
-        {
-          name: 'Log Out',
-          state: {
-            name: 'login'
-          }       
-        }];       
+    .controller('NavbarController', function ($scope, profileService, $timeout, $mdSidenav, $log, navbarMenu) {
+      var vm = this;
 
-        profileService.getProfile().then(function(user) {
-          $scope.user = user;
-        });
+      vm.toggleLeft = buildToggler('left');
+      vm.menuSections = navbarMenu;
+
+      profileService.getProfile().then(function(user) {
+        vm.user = user;
+      });
      
       function buildToggler(navID) {
         return function() {

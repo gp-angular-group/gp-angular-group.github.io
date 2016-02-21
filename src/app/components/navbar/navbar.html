@@ -1,24 +1,24 @@
 <div ng-controller="NavbarController" layout="column" ng-cloak>
   	<md-toolbar class="toolbar">
-	  <div class="md-toolbar-tools">
-	    <md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeft()">
-	        <md-icon class="menu-icon-button" md-svg-icon="assets/images/ic_menu_24px.svg"></md-icon>
-	    </md-button>
-      <p>Text</p>
-	  </div>
-	</md-toolbar>
- 
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="menu" ng-click="navbar.toggleLeft()">
+            <md-icon class="menu-icon-button" md-svg-icon="assets/images/ic_menu_24px.svg"></md-icon>
+        </md-button>
+        <p>Text</p>
+      </div>
+    </md-toolbar>
+
     <md-sidenav class="md-sidenav-left" md-component-id="left" >
       <md-toolbar class="md-theme-indigo">
         <div class="user-avatar" >
-          <img width="40%" ng-src='{{ user.avatar }}' />
+          <img width="40%" ng-src='{{ navbar.user.avatar }}' />
         </div>
-        <h1 class="md-toolbar-tools">{{ user.firstName + " " + user.lastName }}</h1>
+        <h1 class="md-toolbar-tools">{{ navbar.user.firstName + " " + navbar.user.lastName }}</h1>
       </md-toolbar>
       <md-content layout-padding >
-        <md-list-item ng-repeat="section in menuSections">
+        <md-list-item ng-repeat="section in navbar.menuSections">
 	                
-    		<li><a ui-sref="{{section.state.name}}">{{section.name}}</a></li>
+    		  <li><a ui-sref="{{ section.state }}">{{ section.title }}</a></li>
 			
       	</md-list-item>
       </md-content>
