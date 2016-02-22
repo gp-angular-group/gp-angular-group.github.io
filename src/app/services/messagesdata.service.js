@@ -7,32 +7,39 @@
     .service('messagesDataService', messagesDataService);
 
   //@ngInject
-  function messagesDataService($http, $log) {
+  function messagesDataService($http) {
     this.userMassages = [
       {
-        title: 'Message title 1',
-        description: 'Send a text message to your friends and family in Philippines. Enter your Philippines mobile number and sms text message and click send.'
+        title: 'Message title 1. Theodore Roosevelt',
+        description: 'The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.'},
+      {
+        title: 'Message title 2. Winston Churchill',
+        description: 'It\'s not good enough that we do our best; sometimes we have to do what\'s required.'
       },
       {
-        title: 'Message title 2',
-        description: 'That\'s right, we won\'t send you unwanted text messages or share your phone number with anybody.'
+        title: 'Message title 3. Abraham Lincoln',
+        description: 'Character is like a tree and a reputation like a shadow. The shadow is what we think of it; the tree is the real thing.'
+      },
+      {
+        title: 'Message title 4. Funny SMS',
+        description: 'Two goldfish are in a tank. One says to the other, “Do you know how to drive this thing?"'
+      },
+      {
+        title: 'Message title 5. Text message',
+        description: 'Say good about yourself and you\’ll be called arrogant; say bad about yourself and you\’ll be believed.'
       }
     ];
 
+    // method for backend mock server
     this.getAll = function () {
       return this.userMassages;
     };
 
-    this.testData = 'testmessagesService';
-
-/*    return {
-        getUserMessages: getUserMessages
-    };*/
-
     this.getUMsgs = getUserMessages;
 
+    // Get the message from the remote server
     function getUserMessages() {
-      return $http.get('/fakeRemoteserver/userMassages')
+      return $http.get('/fakeRemoteServer/userMassages')
             .then(getUserMessagesComplete)
             .catch(getUserMessagesFailed);
 

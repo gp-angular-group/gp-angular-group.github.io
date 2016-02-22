@@ -9,11 +9,12 @@
   function MessagesController(messagesDataService, $log){
     var vm = this;
 
-    // get from server array of objects 
-    messagesDataService.getUMsgs().then(function(UMsgs) {
-      console.log('From mes ctrl: ' + UMsgs[0].title);
+    // Get from server array of objects and prepare for controller uses
+    // UMsgs = [{title:'description},{title:'description'}..]
+    messagesDataService.getUMsgs().then(toPrepareForCtrl);
+    function toPrepareForCtrl(UMsgs) {  
       vm.userMasseges = UMsgs;
-    });
+    }
 
     $log.info('сообщения');
   }
