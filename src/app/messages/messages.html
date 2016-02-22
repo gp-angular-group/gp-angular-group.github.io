@@ -1,7 +1,10 @@
 <!-- <social-navbar></social-navbar> -->
 
 
-<div>
+<div class= "msg-page">
   <h1>Messages</h1>
-  <p>{{messages.userMasseges[0].title}}</p>
+  <dl ng-repeat ="message in messages.userMasseges" >
+    <dt class="msg-title">{{message.title}}</dt>
+    <dd class="msg-defenition">{{message.description}}</dd>
+  </dl>
 </div>
