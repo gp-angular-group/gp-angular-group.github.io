@@ -3,11 +3,17 @@
 
   angular
     .module('gpSocial')
-    .controller('MessagesController', MessagesController)
+    .controller('MessagesController', MessagesController);
 
   /** @ngInject */
-  function MessagesController($log){
-    //var vm = this;
+  function MessagesController(messagesDataService, $log){
+    var vm = this;
+
+    // get from server array of objects 
+    messagesDataService.getUMsgs().then(function(UMsgs) {
+      console.log('From mes ctrl: ' + UMsgs[0].title);
+      vm.userMasseges = UMsgs;
+    });
 
     $log.info('сообщения');
   }

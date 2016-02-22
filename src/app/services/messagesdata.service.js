@@ -4,10 +4,10 @@
 
   angular
     .module('gpSocial')
-    .service('messagesDataService', messagesDataService)
+    .service('messagesDataService', messagesDataService);
 
   //@ngInject
-  function messagesDataService() {
+  function messagesDataService($http, $log) {
     this.userMassages = [
       {
         title: 'Message title 1',
@@ -24,6 +24,26 @@
     };
 
     this.testData = 'testmessagesService';
+
+/*    return {
+        getUserMessages: getUserMessages
+    };*/
+
+    this.getUMsgs = getUserMessages;
+
+    function getUserMessages() {
+      return $http.get('/fakeRemoteserver/userMassages')
+            .then(getUserMessagesComplete)
+            .catch(getUserMessagesFailed);
+
+      function getUserMessagesComplete(response) {
+          return response.data;
+      }
+
+      function getUserMessagesFailed(error) {
+          logger.error('XHR Failed for getUserMessages.' + error.data);
+      }
+    }
 
   }
 }());
