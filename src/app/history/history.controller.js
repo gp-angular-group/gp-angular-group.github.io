@@ -6,14 +6,11 @@
     .controller('HistoryController', HistoryController);
 
   /** @ngInject */
-  function HistoryController(historyDataService){
+  function HistoryController(historyData){
     var vm = this;
 
     // Get from server array of objects and prepare for controller uses
-    historyDataService.getUHistory().then(toPrepareForCtrl);
-    function toPrepareForCtrl(UHistory) {  
-      vm.userHistory = UHistory;
-    }
+    vm.userHistory = historyData;
 
     // vm.myhistory = [
     //   {

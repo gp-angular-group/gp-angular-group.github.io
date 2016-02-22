@@ -6,7 +6,7 @@
     .controller('ProfileController', ProfileController);
 
   /** @ngInject */
-  function ProfileController(profileService, $log){
+  function ProfileController(profileService, $log, profileData){
     var vm = this;
 
     vm.genders = {
@@ -14,9 +14,7 @@
       F: 'Female'
     };
 
-    profileService.getProfile().then(function(user) {
-      vm.user = user;
-    });
+    vm.user = profileData;
 
     vm.submitForm = function() {
       // check to make sure the form is completely valid
@@ -25,6 +23,7 @@
       }
 
     };
+
     vm.save = function() {
       $log.info("save");
       vm.message = true; //временно

@@ -22,7 +22,7 @@
             controllerAs: 'login'
           }
         }
-        
+
       })
 
       .state('history', {
@@ -38,8 +38,12 @@
             controller:   'HistoryController',
             controllerAs: 'history'
           }
+        },
+        resolve: {
+          historyData: function(historyDataService) {
+            return  historyDataService.getUHistory();
+          }
         }
-        
       })
 
       .state('messages', {
@@ -54,6 +58,11 @@
             templateUrl:  'app/messages/messages.html',
             controller:   'MessagesController',
             controllerAs: 'messages'
+          }
+        },
+        resolve: {
+          messagesData: function(messagesDataService) {
+            return  messagesDataService.getUMsgs();
           }
         }
         
@@ -72,8 +81,12 @@
             controller:   'ProfileController',
             controllerAs: 'profile'
           }
+        },
+        resolve: {
+          profileData: function(profileService) {
+            return  profileService.getProfile();
+          }
         }
-        
       });
 
     $urlRouterProvider.otherwise('/');
