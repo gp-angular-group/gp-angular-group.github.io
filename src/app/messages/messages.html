@@ -1,8 +1,9 @@
 <!-- <social-navbar></social-navbar> -->
-<div class= "msg-page">
-  <h1>Messages</h1>   
-	  <dl ng-repeat ="message in messages.userMasseges" >
-	    <dt class="msg-title">{{message.title}}</dt>
-	    <dd class="msg-defenition">{{message.description}}</dd>
-	  </dl>		  	
+<div class="msg">
+  <h1 class="msg-title">Messages:</h1>
+  <ang-accordion icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
+    <collapsible-item class="msg-item" item-title="Theme {{$index+1}}: {{message.title}}" ng-repeat ="message in messages.userMasseges">
+      <div>{{message.description}}</div>
+    </collapsible-item>
+  </ang-accordion>
 </div>

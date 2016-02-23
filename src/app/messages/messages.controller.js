@@ -13,6 +13,14 @@
     // UMsgs = [{title:'description},{title:'description'}..]
     vm.userMasseges = messagesData;
 
+
+    vm.mshow = false;
+    vm.toggleDefenition = tglDefenition;
+    function tglDefenition(index) {
+      $log.info('Click!' + index);
+      vm.mshow = vm.mshow === false ? true: false;
+    }
+
     $log.info('сообщения');
   }
 
