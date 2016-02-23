@@ -2,6 +2,7 @@
 
 
 <div flex-xs flex-gt-xs="50" layout="column">
+	<h1 class="msg-title">History:</h1>
 	<md-button class="md-raised md-primary sort-button" ng-click=" orderByField='price';sortType = !sortType">Sort</md-button>
 		<md-list layout-padding >
 		<md-card ng-repeat="history in history.userHistory | orderBy:orderByField:sortType" >
@@ -10,7 +11,6 @@
 				<div  class="md-list-item-text md-2-line">
 				  <h4>{{ history.title }}</h4>
 				  <p>{{ history.description }}</p>
-
 				</div>
 				<div>
 			    <p layout="row" layout-align="center center"   class="price-text">{{ history.price }} $</p>
