@@ -7,7 +7,7 @@
     .service('messagesDataService', messagesDataService);
 
   //@ngInject
-  function messagesDataService($http) {
+  function messagesDataService($http, $log) {
     this.userMassages = [
       {
         title: 'Message title 1. Theodore Roosevelt',
@@ -48,7 +48,7 @@
       }
 
       function getUserMessagesFailed(error) {
-          logger.error('XHR Failed for getUserMessages.' + error.data);
+          $log.error('XHR Failed for getUserMessages.' + error.data);
       }
     }
 

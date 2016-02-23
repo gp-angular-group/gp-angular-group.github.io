@@ -7,7 +7,7 @@
     .service('historyDataService', historyDataService);
 
   //@ngInject
-  function historyDataService($http) {
+  function historyDataService($http, $log) {
     this.userHistory = [
       {
         image: 'http://38.media.tumblr.com/avatar_8cc900efa7d0_128.png',
@@ -41,7 +41,7 @@
       }
 
       function getUserHistoryFailed(error) {
-          logger.error('XHR Failed for getUserHistory.' + error.data);
+          $log.error('XHR Failed for getUserHistory.' + error.data);
       }
     }
 
