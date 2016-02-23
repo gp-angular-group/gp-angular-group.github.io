@@ -2,7 +2,7 @@
 <div class="msg">
   <h1>Messages</h1>
   <ang-accordion icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
-    <collapsible-item class="msg-item" item-title="Theme {{$index+1}}: {{message.title}}" ng-repeat ="message in messages.userMasseges">
+    <collapsible-item item-title="Theme {{$index+1}}: {{message.title}}" ng-repeat ="message in messages.userMasseges">
       <div>{{message.description}}</div>
     </collapsible-item>
   </ang-accordion>
