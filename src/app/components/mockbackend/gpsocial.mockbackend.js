@@ -6,13 +6,13 @@
     .run([ "$httpBackend","messagesDataService","historyDataService", backend]);
 
   // Mock a server side, return data.
-  function backend($httpBackend, messagesDataService, historyDataService) {
+  function backend($httpBackend, messagesService, historyDataService) {
 
-    $httpBackend.whenGET('/fakeRemoteServer/userMassages').respond(getAllUserMessages);
+/*    $httpBackend.whenGET('/fakeRemoteServer/userMassages').respond(getAllUserMessages);
     function getAllUserMessages() {
-      var userMessages = messagesDataService.getAll();
+      var userMessages = messagesService.getAll();
       return [200, userMessages, {}];
-    }
+    }*/
 
     $httpBackend.whenGET('/fakeRemoteServer/userHistory').respond(getAllUserHistory);
     function getAllUserHistory() {

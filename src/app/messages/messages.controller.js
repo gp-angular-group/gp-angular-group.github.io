@@ -10,17 +10,10 @@
     var vm = this;
 
     // Get from server array of objects and prepare for controller uses
-    // UMsgs = [{title:'description},{title:'description'}..]
-    vm.userMasseges = messagesData;
+    // userMessages = [{title:'description},{title:'description'}..]
+    vm.userMessages = messagesData.getMessages();
 
-
-    vm.mshow = false;
-    vm.toggleDefenition = tglDefenition;
-    function tglDefenition(index) {
-      $log.info('Click!' + index);
-      vm.mshow = vm.mshow === false ? true: false;
-    }
-
+    $log.info('The result from get json: ' + vm.userMessages);
     $log.info('сообщения');
   }
 

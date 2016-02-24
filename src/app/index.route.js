@@ -61,8 +61,8 @@
           }
         },
         resolve: {
-          messagesData: function(messagesDataService) {
-            return  messagesDataService.getUMsgs();
+          messagesData: function(messagesService) {
+            return  messagesService.getMessages();
           }
         }
         
