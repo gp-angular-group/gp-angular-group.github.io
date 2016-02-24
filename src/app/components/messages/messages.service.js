@@ -23,7 +23,7 @@
   /** @ngInject */
   function messagesServiceMock($http) {
     this.getMessages = function() {
-        return $http.get('app/components/messages/mock/messages.mock.json');  
+        return $http.get('app/components/messages/mock/getMessages.mock.json');  
     };
   }
 }());

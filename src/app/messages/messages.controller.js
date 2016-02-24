@@ -11,9 +11,9 @@
 
     // Get from server array of objects and prepare for controller uses
     // userMessages = [{title:'description},{title:'description'}..]
-    vm.userMessages = messagesData.getMessages();
+    console.dir(messagesData);
+    vm.userMessages = messagesData.data;
 
-    $log.info('The result from get json: ' + vm.userMessages);
     $log.info('сообщения');
   }
 
