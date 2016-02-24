@@ -3,6 +3,16 @@
   		<h1 class="logo">facepalmbook</h1>    
   </div>
 </md-toolbar> -->
-<div>
-  <md-button class="md-raised md-primary login-button" ng-click="login.enter()">Log In</md-button>
+<div class="auth-panel">	
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Login</label>
+		<input type="text" ng-model="main.username"> 
+		</md-input-container>
+
+		<md-input-container class="md-block" flex-gt-sm width="150px">
+			<label>Password</label>
+		<input type="password" ng-model="main.password">
+		</md-input-container>
+
+		<md-button class="md-raised md-primary login-button" ng-click="login.enter()">Log In</md-button>
 </div>
