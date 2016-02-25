@@ -1,8 +1,14 @@
-<!-- <md-toolbar class="toolbar">
-  <div class="md-toolbar-tools">
-  		<h1 class="logo">facepalmbook</h1>    
+<form ng-submit="login.enter()" class="loginForm">
+  <div class="loginTitle">Login</div>
+  <div class="group">
+    <input type="text"><span class="highlight"></span><span class="bar"></span>
+    <label>Name</label>
   </div>
-</md-toolbar> -->
-<div>
-  <md-button class="md-raised md-primary login-button" ng-click="login.enter()">Log In</md-button>
-</div>
+  <div class="group">
+    <input type="password"><span class="highlight"></span><span class="bar"></span>
+    <label>Password</label>
+  </div>
+  <button type="submit" class="button buttonBlue">Login
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+</form>
