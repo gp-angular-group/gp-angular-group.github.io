@@ -1,18 +1,15 @@
-<!-- <md-toolbar class="toolbar">
-  <div class="md-toolbar-tools">
-  		<h1 class="logo">facepalmbook</h1>    
-  </div>
-</md-toolbar> -->
 <div class="auth-panel">	
 		<md-input-container class="md-block" flex-gt-sm>
 			<label>Login</label>
-		<input type="text" ng-model="main.username"> 
+		<input type="text" ng-model="login.username"> 
 		</md-input-container>
 
-		<md-input-container class="md-block" flex-gt-sm width="150px">
+		<md-input-container class="md-block" flex-gt-sm>
 			<label>Password</label>
-		<input type="password" ng-model="main.password">
+		<input type="password" ng-model="login.password">
 		</md-input-container>
 
-		<md-button class="md-raised md-primary login-button" ng-click="login.enter()">Log In</md-button>
+		<md-button class="md-raised md-primary login-button" ng-click="login.login()">Log In</md-button>
+		<h3 class="md-headline">{{login.message}}</h3>
+		<!-- <md-button class="md-raised md-primary login-button" ng-click="login.register()">Register</md-button> -->
 </div>

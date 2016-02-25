@@ -18,8 +18,12 @@
         <md-list-item ng-repeat="section in navbar.menuSections">
 	                
     		  <li><a ui-sref="{{ section.state }}">{{ section.title }}</a></li>
-			
+		      
+            
       	</md-list-item>
+        <md-list-item ng-controller="LoginController as login">
+          <li><a ui-sref="login" ng-click="login.logout()" ng-show="login.isAuthed()">Log Out</a></li>
+        </md-list-item>
       </md-content>
     </md-sidenav>
   

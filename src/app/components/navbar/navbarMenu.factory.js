@@ -19,10 +19,10 @@
       {
         title: 'My history',
         state: 'history'
-      },
+      }/*,
       {
         title: 'Log Out',
         state: 'login'
-      }];
+      }*/];
   }
 })();

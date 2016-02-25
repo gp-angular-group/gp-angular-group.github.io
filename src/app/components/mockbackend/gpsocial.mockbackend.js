@@ -16,6 +16,7 @@
     
     // Ignore all other requests
     $httpBackend.whenGET(/.*/).passThrough();
+    $httpBackend.whenPOST(/.*/).passThrough();
   }
 
 }());
