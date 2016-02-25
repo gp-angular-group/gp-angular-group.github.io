@@ -40,8 +40,8 @@
           }
         },
         resolve: {
-          historyData: function(historyDataService) {
-            return  historyDataService.getUHistory();
+          historyData: function(historyService) {
+            return  historyService.getHistory();
           }
         }
       })

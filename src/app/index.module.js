@@ -3,7 +3,7 @@
 
   angular
     .module('gpSocial', [
-      'ngMockE2E',
+      // 'ngMockE2E',
       'ngAnimate',
       'ngCookies',
       'ngTouch',
