@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-  // The data file for serverless.
 
   angular
     .module('gpSocial')

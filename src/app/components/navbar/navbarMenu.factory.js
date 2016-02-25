@@ -10,19 +10,19 @@
     return [
       {
         title: 'My profile',
-        state: 'profile'
+        state: 'app.profile'
       },
       {
         title: 'My messages',
-        state: 'messages'
+        state: 'app.messages'
       },
       {
         title: 'My history',
-        state: 'history'
+        state: 'app.history'
       }/*,
       {
         title: 'Log Out',
-        state: 'login'
+        state: 'app.login'
       }*/];
   }
 })();
