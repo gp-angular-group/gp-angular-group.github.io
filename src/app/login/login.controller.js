@@ -19,7 +19,7 @@
 
       function handleRequest(res) {
         var token = res.data ? res.data.token : null;
-        if(token) { $state.go('profile'); console.log('JWT:', token); }
+        if(token) { $state.go('app.profile'); console.log('JWT:', token); }
         vm.message = res.data.message;
         
       }
@@ -28,10 +28,10 @@
         user.login(vm.username, vm.password)
           .then(handleRequest, handleRequest)
       }
-      /*vm.register = function() {
+      vm.register = function() {
         user.register(vm.username, vm.password)
           .then(handleRequest, handleRequest)
-      } */     
+      }      
       vm.logout = function() {
         auth.logout && auth.logout()
       }

@@ -46,12 +46,12 @@ function authInterceptor(API, auth) {
 function userService($http, API, auth) {
   var self = this;
  
-  /*self.register = function(username, password) {
+  self.register = function(username, password) {
   return $http.post(API + '/auth/register', {
       username: username,
       password: password
     })
-  }*/
+  }
 
   self.login = function(username, password) {
   return $http.post(API + '/auth/login', {
