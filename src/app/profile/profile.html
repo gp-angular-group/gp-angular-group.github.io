@@ -1,15 +1,10 @@
-<!-- <social-navbar></social-navbar> -->
-
 <div class="wrapper" >
   <div class="user-avatar">
     <img width="40%" ng-src='{{ profile.user.avatar }}' />
   </div>
-
   <h1 class="greeting"><p>Hi, {{ profile.user.firstName + " " + profile.user.lastName }}!</p></h1>
   <form name="userForm">
     <ang-accordion  one-at-a-time="true" icon-position="right" close-icon-url="assets/images/right-icon.png" open-icon-url="assets/images/down-icon.png">
-
-
       <collapsible-item item-title="FIRST NAME: {{profile.user.firstName}}">
             <md-input-container class="input">
               <!--label>NAME:</label-->
@@ -20,7 +15,6 @@
               <p ng-show="userForm.firstName.$error.checkFirstNameDirective"  class="help-block">{{firstNameErrorText}}</p>
             </md-input-container>
         </collapsible-item>
-
       <collapsible-item item-title="LAST NAME: {{profile.user.lastName}}">
             <md-input-container class="input">
               <!--label>NAME:</label-->
@@ -31,7 +25,6 @@
               <p ng-show="userForm.lastName.$error.checkLastNameDirective"  class="help-block">{{LastNameErrorText}}</p>
             </md-input-container>
         </collapsible-item>
-
         <collapsible-item  item-title="AGE: {{profile.user.age}}">
             <md-input-container>
               <!--label>AGE:</label-->
@@ -42,10 +35,8 @@
               <p ng-show="userForm.userAge.$error.checkAgeDirective"  class="help-block">{{ageErrorText}}</p>
             </md-input-container>
         </collapsible-item>
-
       <collapsible-item item-title="GENDER: {{ profile.genders[profile.user.gender] }}">
         <div class="selecteGender">
-
           <md-input-container class="md-block"  flex-gt-sm>
                 <md-select ng-model="profile.user.gender">
                   <md-option ng-repeat="(genderKey, gender)  in profile.genders" value="{{ genderKey }}">
@@ -57,8 +48,6 @@
         </collapsible-item>
     </ang-accordion>
   </form>
-
   <md-button type="submit" name="submitButton" ng-click="profile.save()" class="md-raised md-primary" ng-disabled="userForm.firstName.$error.checkFirstNameDirective || userForm.lastName.$error.checkLastNameDirective|| userForm.userAge.$error.checkAgeDirective">Save</md-button>
   <span ng-show="profile.message">Saved!</span>
-
 </div>  

@@ -8,32 +8,34 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('login', {
-        url: '/',
+      .state('app', {
+        abstract: true,
+        url: '',
         views: {
-          'viewToolbar': {
-            templateUrl:  'app/components/navbar/navbar.login.html',
+          'navbar': {
+            templateUrl:  'app/components/navbar/navbar.main.html',
             controller:   'NavbarController',
             controllerAs: 'navbar'
+          }
+        }
+      })
+      .state('app.login', {
+        url: '/',
+        views: {
+          'navbar@': {
+            templateUrl:  'app/components/navbar/navbar.login.html'
           },
-          'viewMain': {
+          'content@': {
             templateUrl:  'app/login/login.html',
             controller:   'LoginController',
             controllerAs: 'login'
           }
         }
-
       })
-
-      .state('history', {
+      .state('app.history', {
         url: '/history',
         views: {
-          'viewToolbar': {
-            templateUrl:  'app/components/navbar/navbar.main.html',
-            controller:   'NavbarController',
-            controllerAs: 'navbar'
-          },
-          'viewMain': {
+          'content@': {
             templateUrl:  'app/history/history.html',
             controller:   'HistoryController',
             controllerAs: 'history'
@@ -45,16 +47,10 @@
           }
         }
       })
-
-      .state('messages', {
+      .state('app.messages', {
         url: '/messages',
         views: {
-          'viewToolbar': {
-            templateUrl:  'app/components/navbar/navbar.main.html',
-            controller:   'NavbarController',
-            controllerAs: 'navbar'
-          },
-          'viewMain': {
+          'content@': {
             templateUrl:  'app/messages/messages.html',
             controller:   'MessagesController',
             controllerAs: 'messages'
@@ -65,18 +61,11 @@
             return  messagesService.getMessages();
           }
         }
-        
       })
-
-      .state('profile', {
+      .state('app.profile', {
         url: '/profile',
         views: {
-          'viewToolbar': {
-            templateUrl:  'app/components/navbar/navbar.main.html',
-            controller:   'NavbarController',
-            controllerAs: 'navbar'
-          },
-          'viewMain': {
+          'content@': {
             templateUrl:  'app/profile/profile.html',
             controller:   'ProfileController',
             controllerAs: 'profile'

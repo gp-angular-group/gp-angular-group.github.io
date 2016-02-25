@@ -12,7 +12,7 @@
       vm.enter = function() {
         $log.info("get");
         authorisationService.login().then(function(){
-           $state.go('profile');
+           $state.go('app.profile');
         });
       }
     }
